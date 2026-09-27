@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelvin Notes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="gate">
+    <h1>Kelvin Notes</h1>
+    <p id="gate-msg">Đang mở…</p>
+    <button id="gate-btn" class="primary">Chọn folder</button>
+    <button id="gate-other" class="link" hidden>Chọn folder khác</button>
+  </section>
+
+  <main id="app" hidden>
+    <aside id="left" class="col">
+      <header class="bar">
+        <strong>Tasks</strong>
+        <span id="tasks-status" class="status"></span>
+        <button id="tasks-mode" class="small">Sửa dạng chữ</button>
+      </header>
+      <ul id="tasks-list"></ul>
+      <input id="tasks-add" placeholder="+ Thêm việc, Enter để lưu" autocomplete="off">
+      <textarea id="tasks-raw" hidden spellcheck="false"></textarea>
+      <footer id="vault-name" class="muted"></footer>
+    </aside>
+
+    <section id="middle" class="col">
+      <header class="bar">
+        <strong id="detail-title">Details</strong>
+        <span id="detail-status" class="status"></span>
+      </header>
+      <p id="detail-empty" class="muted pad">Bấm vào một việc bên trái để mở Details.<br>
+        Trong note: <kbd>Cmd</kbd> + click vào <code>[[tên]]</code> để mở trang đó.<br>
+        <kbd>Cmd</kbd> + <kbd>[</kbd> / <kbd>]</kbd>: ẩn hiện cột trái / phải.</p>
+      <textarea id="detail-editor" hidden spellcheck="false"></textarea>
+    </section>
+
+    <aside id="right" class="col">
+      <header class="bar nav">
+        <button id="day-prev" class="small" aria-label="Ngày trước">‹</button>
+        <button id="day-label" class="small strong"></button>
+        <button id="day-next" class="small" aria-label="Ngày sau">›</button>
+        <span id="freedom-status" class="status"></span>
+        <button id="day-today" class="small" hidden>Hôm nay</button>
+      </header>
+      <div id="day-picker" hidden></div>
+      <textarea id="freedom-editor" disabled spellcheck="false" placeholder="Viết tự do…"></textarea>
+    </aside>
+  </main>
+
+  <script src="vault-fs.js"></script>
+  <script src="task-list-parse.js"></script>
+  <script src="note-editor.js"></script>
+  <script src="tasks-pane.js"></script>
+  <script src="freedom-pane.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
